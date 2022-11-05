@@ -1,6 +1,6 @@
 const express = require('express')
 const cors = require('cors')
-const dotenv = require('dotenv')
+require('dotenv').config({ path: './config.env' })
 const { Server } = require('socket.io')
 const { createServer } = require('http')
 
@@ -10,7 +10,6 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(cors())
 
-dotenv.config({ path: './config.env' })
 
 const server = createServer(app)
 
